@@ -169,7 +169,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # USERS
-AUTH_USER_MODEL = 'icard.icard.user.User'
+AUTH_USER_MODEL = 'user.User'
 
 
 CORS_ORIGIN_ALLOW_ALL = True
