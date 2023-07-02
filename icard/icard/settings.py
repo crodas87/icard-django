@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'rest_framework',
-    'user',
+    'icard.user',
     'categories',
     'products',
     'tables',
