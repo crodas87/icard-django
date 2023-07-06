@@ -31,6 +31,7 @@ from ingredients.api.router import router_ingredients
 from proveedores.api.router import router_proveedores
 from ingredienteProducto.api.router import router_ingredienteProducto
 from ingredienteProducto.api.views import IngredienteProductoApiViewSet
+from ingredients.api.views import IngredientsApiViewSet
 schema_view = get_schema_view(
     openapi.Info(
         title="Snippets API",
@@ -60,6 +61,8 @@ urlpatterns = [
     path('api/', include(router_proveedores.urls)),
     path('api/', include(router_ingredienteProducto.urls)),
     path('api/', include('user.api.router')),
+    path('api/ingredients/update_stock',
+         IngredientsApiViewSet.as_view({'post': 'update_stock'}), name='update_stock'),
     path('api/ingredienteProducto/<int:idProducto>/<int:idIngrediente>/',
          IngredienteProductoApiViewSet.as_view({'delete': 'delete_ingrediente_producto'}), name='delete_ingrediente_producto')
 
